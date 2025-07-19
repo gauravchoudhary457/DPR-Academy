@@ -13,12 +13,10 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
     <section class="header" id="home">
-        <!-- Slideshow container -->
         <div class="slideshow">
             <div class="slide" style="background-image: url('Images/ground1.jpg');"></div>
             <div class="slide" style="background-image: url('Images/ground2.jpg');"></div>
@@ -45,7 +43,6 @@
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-                <!-- <div class="menu-toggle">&#9776;</div> -->
             </div>
         </nav>
 
@@ -56,81 +53,48 @@
         </div>
     </section>
 
-
-
-    <!--==================Courses==================== -->
-
     <section class="courses" id="courses">
         <h1>Courses we offer</h1>
         <p>Build your future with the right guidance </p>
-
         <div class="row">
             <div class="courses-col">
                 <h3>SSC Exam Preparation Course</h3>
-                <p>Get expert preparation for SSC GD, Clerk, and MTS with updated syllabus, regular tests, and personal
-                    guidance at DPR Academy.</p>
+                <p>Get expert preparation for SSC GD, Clerk, and MTS with updated syllabus, regular tests, and personal guidance at DPR Academy.</p>
             </div>
             <div class="courses-col">
                 <h3>HSSC Exam Preparation Course</h3>
-                <p>Get expert coaching for HSSC exams like Clerk, Patwari, and Group D. Learn with Haryana-focused
-                    content, mock tests, and personal guidance at DPR Academy.</p>
+                <p>Get expert coaching for HSSC exams like Clerk, Patwari, and Group D. Learn with Haryana-focused content, mock tests, and personal guidance at DPR Academy.</p>
             </div>
             <div class="courses-col">
                 <h3>Railway Exam Coaching (RRB NTPC, Group D & More)</h3>
-                <p>Join DPR Academy for focused coaching on RRB NTPC, Group D, and more. Strengthen your basics,
-                    practice with mock tests, and boost your speed and accuracy.</p>
+                <p>Join DPR Academy for focused coaching on RRB NTPC, Group D, and more. Strengthen your basics, practice with mock tests, and boost your speed and accuracy.</p>
             </div>
             <div class="courses-col">
                 <h3>Delhi Police Exam Coaching (Constable & Head Constable)</h3>
-                <p>Get complete coaching for Delhi Police Constable and Head Constable exams — with expert teaching,
-                    updated syllabus, and regular practice tests.</p>
+                <p>Get complete coaching for Delhi Police Constable and Head Constable exams — with expert teaching, updated syllabus, and regular practice tests.</p>
             </div>
             <div class="courses-col">
                 <h3>Army GD Coaching (General Duty Soldier)</h3>
-                <p>Get complete training for Army GD Bharti — physical fitness, written exam, and personal mentoring
-                    under expert guidance.</p>
+                <p>Get complete training for Army GD Bharti — physical fitness, written exam, and personal mentoring under expert guidance.</p>
             </div>
             <div class="courses-col">
                 <h3>Chandigarh Police Coaching (Constable & ASI)</h3>
-                <p>Expert coaching for Constable & ASI exams — complete syllabus, physical test tips, and mock practice
-                    for assured success.</p>
+                <p>Expert coaching for Constable & ASI exams — complete syllabus, physical test tips, and mock practice for assured success.</p>
             </div>
         </div>
     </section>
 
-    <!-- ===============About=============== -->
-    <section class="about-section" id="about">
+    <!-- =================== Notice Board =================== -->
+    <section class="notice-board-section" id="notice-board">
         <div class="container">
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="Images/ground2.jpg" alt="Academy Image">
-                </div>
-                <div class="about-text">
-                    <h2>About Our Academy</h2>
-                    <p>
-                        Welcome to <strong>DPR Academy Isharwal</strong>, where excellence meets education. With a
-                        mission to empower students through quality learning, our academy offers a nurturing environment
-                        that supports academic growth, creativity, and personal development.
-                    </p>
-                    <p>
-                        Our experienced educators focus on holistic learning, combining traditional values with modern
-                        teaching techniques. Whether it's school preparation, competitive exams, or skill enhancement,
-                        we guide each student to reach their full potential.
-                    </p>
-                    <p>
-                        Join us to experience a journey of discipline, knowledge, and success!
-                    </p>
-                </div>
-            </div>
+            <h2 class="section-title">📌 Latest Notices</h2>
+            <ul id="noticeList" class="notice-list"></ul>
         </div>
     </section>
 
-
-    <!-- =======================Gallery Section================ -->
+    <!-- =============== Gallery Section =============== -->
     <section class="gallery-section" id="gallery">
         <h2 class="section-title">Our Gallery</h2>
-
-        <!-- ✅ Added gallery-container wrapper -->
         <div class="gallery-container">
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
@@ -141,50 +105,41 @@
                     <div class="swiper-slide"><img src="Images/test.jpg" alt="Gallery Image 5" /></div>
                     <div class="swiper-slide"><img src="Images/classroom.webp" alt="Gallery Image 6" /></div>
                 </div>
-                <!-- Navigation Buttons -->
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
-                <!-- Pagination -->
                 <div class="swiper-pagination"></div>
             </div>
         </div>
     </section>
 
+    <!-- ================= New Backend Gallery Section ================= -->
+    <section class="backend-gallery-section">
+        <div class="container">
+            <h2 class="section-title">🖼️ New Gallery Images</h2>
+            <div id="galleryImages" class="gallery-grid"></div>
+        </div>
+    </section>
 
-    <!-- ============================Contact us=================== -->
-    <!-- ===== Contact Us Section ===== -->
+    <!-- ============================ Contact Us =================== -->
     <section class="contact" id="contact">
         <h2 class="section-title">Contact Us</h2>
         <p class="section-subtitle">We'd love to hear from you. Reach out using the form or contact details below.</p>
-
         <div class="contact-container">
-            <!-- Contact Info -->
             <div class="contact-info">
                 <h3>Get in Touch</h3>
                 <p><i class="fas fa-map-marker-alt"></i> DPR Academy, Isharwal, Haryana, India</p>
                 <p><i class="fas fa-phone"></i> +91-9833371000</p>
                 <p><i class="fas fa-envelope"></i> dpracademy@gmail.com</p>
-
-                <!-- Social Links -->
                 <div class="social-links">
                     <h4>Connect with Us</h4>
-                    <p><a href="https://www.instagram.com/dpr.academy/" target="_blank">
-                            <i class="fab fa-instagram"></i> Instagram</a></p>
-                    <p><a href="https://wa.me/919833371000" target="_blank">
-                            <i class="fab fa-whatsapp"></i> WhatsApp Chat</a></p>
-                    <p><a href="https://whatsapp.com/channel/0029VabuaQm4NVinZEOReS0e" target="_blank">
-                            <i class="fas fa-bullhorn"></i> WhatsApp Channel</a></p>
-                    <p><a href="https://t.me/dpracadmey1" target="_blank">
-                            <i class="fab fa-telegram"></i> Telegram</a></p>
-                    <p><a href="https://www.youtube.com/@DPR_Academy" target="_blank">
-                            <i class="fab fa-youtube"></i> YouTube</a></p>
-                    <p><a href="https://maps.app.goo.gl/X9hm3BSdKBg9h36i8" target="_blank">
-                            <i class="fas fa-map-marker-alt"></i> Academy Location</a></p>
+                    <p><a href="https://www.instagram.com/dpr.academy/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></p>
+                    <p><a href="https://wa.me/919833371000" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Chat</a></p>
+                    <p><a href="https://whatsapp.com/channel/0029VabuaQm4NVinZEOReS0e" target="_blank"><i class="fas fa-bullhorn"></i> WhatsApp Channel</a></p>
+                    <p><a href="https://t.me/dpracadmey1" target="_blank"><i class="fab fa-telegram"></i> Telegram</a></p>
+                    <p><a href="https://www.youtube.com/@DPR_Academy" target="_blank"><i class="fab fa-youtube"></i> YouTube</a></p>
+                    <p><a href="https://maps.app.goo.gl/X9hm3BSdKBg9h36i8" target="_blank"><i class="fas fa-map-marker-alt"></i> Academy Location</a></p>
                 </div>
-
             </div>
-
-            <!-- Contact Form -->
             <form class="contact-form" action="https://formspree.io/f/meozoyww" method="POST">
                 <input type="text" name="name" placeholder="Your Name" required />
                 <input type="email" name="email" placeholder="Your Email" required />
@@ -194,8 +149,7 @@
         </div>
     </section>
 
-
-    <!-- Swiper JS -->
+    <!-- JS Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script src="JS/script.js"></script>
 </body>
