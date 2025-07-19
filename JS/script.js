@@ -96,29 +96,3 @@ window.addEventListener("scroll", function () {
     nav.classList.add("gradient-background");
   }
 });
-
-// ========== Load Notices ==========
-fetch("https://dpr-acadmey.infy.uk/notices.json")
-  .then(res => res.json())
-  .then(data => {
-    const list = document.getElementById("noticeList");
-    data.reverse().forEach(item => {
-      const li = document.createElement("li");
-      li.innerHTML = `<a href="${item.url}" target="_blank">${item.title}</a>`;
-      list.appendChild(li);
-    });
-  })
-  .catch(err => console.error("Notice load error:", err));
-
-// ========== Load Gallery ==========
-fetch("https://dpr-acadmey.infy.uk/gallery.json")
-  .then(res => res.json())
-  .then(images => {
-    const gallery = document.getElementById("galleryImages");
-    images.reverse().forEach(img => {
-      const image = document.createElement("img");
-      image.src = img;
-      gallery.appendChild(image);
-    });
-  })
-  .catch(err => console.error("Gallery load error:", err));
