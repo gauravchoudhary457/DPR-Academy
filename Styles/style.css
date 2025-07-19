@@ -1,0 +1,514 @@
+/* ================== GLOBAL ================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 90px; /* match the height of your .nav */
+    background-color: white;
+}
+
+/* === Slideshow Background === */
+.slideshow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    overflow: hidden;
+    background-color: white;
+}
+
+.slideshow::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: white;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    z-index: 0;
+}
+
+.slide.active {
+    opacity: 0.5;
+    z-index: 0;
+}
+
+/* ================== NAVIGATION ================== */
+.nav {
+    display: flex;
+    padding: 1.5% 6%;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background: linear-gradient(to right, #FF9933, white, #138808);
+    transition: background 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+.nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.nav.scrolled {
+    background: transparent !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.nav img {
+    width: 120px;
+    height: auto;
+    display: block;
+    border-radius: 50%;
+}
+
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background-color: #fff;
+    display: block;
+    margin: auto;
+    transition: all 0.5s ease;
+}
+
+.nav.scrolled .nav-links ul li::after {
+    background-color: #333;
+}
+
+.nav-links ul li:hover::after {
+    width: 100%;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    font-family: sans-serif;
+    transition: color 0.4s ease;
+}
+
+/* === Active link underline === */
+.nav-links ul li a.active {
+    border-bottom: 2px solid white;
+}
+
+.nav.scrolled .nav-links ul li a {
+    color: #333;
+}
+
+/* Logo and Title */
+.logo-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-title img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.academy-name {
+    color: white;
+    font-size: 26px;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: color 0.4s ease;
+
+}
+
+.nav.scrolled .academy-name {
+    color: #333;
+}
+
+/* ================== TEXT ================== */
+.text-box {
+    width: 90%;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 3;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.text-box h1 {
+    font-size: 50px;
+}
+
+.text-box p {
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: white;
+}
+
+/* ========== BUTTON ========== */
+.hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid yellow;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all .4s ease;
+}
+
+.hero-btn:hover {
+    border: 1px solid white;
+    background: white;
+    color: black;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+/* ========== ABOUT SECTION ========== */
+.about-section {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+}
+
+.about-image {
+    flex: 1 1 40%;
+    text-align: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+    flex: 1 1 55%;
+}
+
+.about-text h2 {
+    font-size: 36px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* ========== COURSES SECTION ========== */
+.courses {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.courses h1 {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.courses p {
+    color: #777;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+
+.courses .row {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.courses .row .courses-col {
+    flex-basis: 31%;
+    background: #fff3f3;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 10px 12px;
+    box-sizing: border-box;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.courses .row .courses-col:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.courses .row .courses-col h3 {
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+/* ========== GALLERY SECTION ========== */
+.gallery-section {
+    padding: 40px 20px;
+    background-color: #f5f5f5;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 100px;
+    height: 4px;
+    background: #007bff;
+    border-radius: 2px;
+}
+
+.gallery-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.swiper {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.swiper-slide {
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+}
+
+/* ========== CONTACT SECTION ========== */
+.contact {
+    padding: 60px 20px;
+    background: #f7f7f7;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 40px;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.contact-info,
+.contact-form {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.contact-info h3,
+.contact-info h4 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.contact-info p,
+.social-links a {
+    margin: 10px 0;
+    color: #444;
+    font-size: 16px;
+}
+
+.contact-info i {
+    color: #0d6efd;
+    margin-right: 10px;
+}
+
+.social-links a {
+    display: block;
+    text-decoration: none;
+    color: #444;
+    font-size: 15px;
+    margin-top: 8px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #0d6efd;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    margin: 12px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.contact-form button {
+    background-color: #0d6efd;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+/* ========== MEDIA QUERY FOR MOBILE NAVIGATION ========== */
+@media (max-width: 768px) {
+
+     .nav {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 20px;
+  }
+
+  .nav .container {
+    flex-direction: column !important; /* <-- Add this */
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo-title {
+    order: 1;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-links {
+    order: 2;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .nav-links ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
+    padding: 0;
+    margin: 0;
+    overflow-x: auto;
+  }
+
+  .nav-links ul li {
+    display: inline-block;
+    padding: 8px 10px;
+    flex: none;
+  }
+
+  .nav-links ul li a {
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .courses .row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .courses .row .courses-col {
+    flex-basis: 100%;
+  }
+
+    .academy-name {
+    font-size: 18px; /* 👈 This makes it smaller on mobile */
+  }
+  .text-box h1
+  {
+    margin-top: 30px;
+    font-size: 20px;
+  }
+}
